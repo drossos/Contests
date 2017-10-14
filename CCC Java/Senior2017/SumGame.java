@@ -14,16 +14,23 @@ public class SumGame {
 		int oneTot = 0;
 		int twoTot = 0;
 		int totDays = 0;
+		boolean nvrMatch = false;
 		for (int i = 0; i < teamOneS.length;i++) {
 			oneTot += Integer.parseInt(teamOneS[i]);
 			twoTot += Integer.parseInt(teamTwoS[i]);
+			totDays ++;
+			if (i != teamOneS.length-1) {
+				if (oneTot == twoTot && oneTot+Integer.parseInt(teamOneS[i+1]) != twoTot+Integer.parseInt(teamTwoS[i+1]))
+					break;
+			} else if (i == teamOneS.length-1 && twoTot != oneTot) {
+				nvrMatch = true;
+			}
 			
-			if (oneTot == twoTot)
-				totDays = i+1;
-			else 
-				break;
 		}
-		System.out.println(totDays);
+		if (!nvrMatch)
+			System.out.println(totDays);
+		else 
+			System.out.println(0);
 	}
 
 }
