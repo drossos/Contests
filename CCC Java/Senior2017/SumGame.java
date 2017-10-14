@@ -13,9 +13,17 @@ public class SumGame {
 		String [] teamTwoS = read.readLine().split(" ");
 		int oneTot = 0;
 		int twoTot = 0;
+		int totDays = 0;
 		for (int i = 0; i < teamOneS.length;i++) {
-			if (oneTot)
+			oneTot += Integer.parseInt(teamOneS[i]);
+			twoTot += Integer.parseInt(teamTwoS[i]);
+			
+			if (oneTot == twoTot)
+				totDays = i+1;
+			else 
+				break;
 		}
+		System.out.println(totDays);
 	}
 
 }
