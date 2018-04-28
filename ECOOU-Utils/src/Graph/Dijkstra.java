@@ -15,7 +15,7 @@ public class Dijkstra {
     private Set<Vertex> settledNodes;
     private Set<Vertex> unSettledNodes;
     private Map<Vertex, Vertex> predecessors;
-    private Map<Vertex, Integer> distance;
+    private Map<Vertex, Integer> distance; 
 
     public Dijkstra(Graph graph) {
         // create a copy of the array so that we can operate on this array
